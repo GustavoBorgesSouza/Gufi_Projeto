@@ -1,0 +1,63 @@
+CREATE DATABASE Gufi;
+GO
+
+USE Gufi;
+GO
+
+CREATE TABLE TipoUsuario(
+	IdTipoUsuario INT PRIMARY KEY IDENTITY(1,1),
+	TituloTipoUsuario VARCHAR(30) UNIQUE NOT NULL
+);
+GO
+
+CREATE TABLE TipoEvento(
+ IdTipoEvento INT PRIMARY KEY IDENTITY,
+ TituloTipoEvento VARCHAR(50) UNIQUE NOT NULL
+);
+GO
+
+CREATE TABLE Instituicao(
+	IdInstituicao INT PRIMARY KEY IDENTITY,
+	CNPJ CHAR(11) UNIQUE NOT NULL,
+	NomeFantasia VARCHAR(100) UNIQUE NOT NULL,
+	Endereco VARCHAR(200) UNIQUE NOT NULL
+);
+GO
+
+CREATE TABLE Situacao(
+	 IdSituacao INT PRIMARY KEY IDENTITY,
+	 Descricao VARCHAR(50)
+);
+GO
+
+CREATE TABLE Usuario(
+	IdUsuario INT PRIMARY KEY IDENTITY,
+	IdTipoUsuario INT FOREIGN KEY REFERENCES TipoUsuario(IdTipoUsuario),
+	NomeUsuario VARCHAR(50) NOT NULL,
+	Email VARCHAR(256) UNIQUE NOT NULL,
+	Senha VARCHAR(10) NOT NULL
+);
+GO
+
+CREATE TABLE Evento(
+	IdEvento INT PRIMARY KEY IDENTITY,
+	IdTipoEvento INT FOREIGN KEY REFERENCES TipoEVento(IdTipoEvento),
+	IdInstituicao INT FOREIGN KEY REFERENCES Instituicao(IdInstituicao),
+	NomeEvento VARCHAR(100) NOT NULL,
+	DescricaoEvento VARCHAR(500) NOT NULL,
+	DataEvento DATETIME NOT NULL,
+	AcessoLivre BIT DEFAULT (1)
+);
+GO
+
+
+
+CREATE TABLE Inscricao(
+	IdInscricao INT PRIMARY KEY IDENTITY,
+	IdUsuario INT FOREIGN KEY REFERENCES Usuario(IdUsuario),
+	IdEvento INT FOREIGN KEY REFERENCES Evento(IdEvento),
+	IdSituacao INT FOREIGN KEY REFERENCES Situacao(IdSituacao) DEFAULT(1)
+);
+GO
+
+

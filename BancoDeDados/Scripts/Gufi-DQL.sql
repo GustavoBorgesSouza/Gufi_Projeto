@@ -17,6 +17,9 @@ GO
 --> LISTA DE TODAS AS PRESENCAS
 	SELECT * FROM Inscricao;
 	GO
+
+	SELECT * FROM Situacao;
+	GO
 -->SELECIONAR OS DADOS DOS EVENTOS , DA INSTITUICAO E DOS TIPOS DE EVENTOS
 	SELECT NomeEvento 'Nome do evento', TituloTipoEvento 'Tipo do evento',NomeFantasia 'Nome da Escola', DescricaoEvento 'Descrição do evento',DataEvento 'Data'
 	FROM Evento
@@ -52,3 +55,4 @@ GO
 -- Busca um usuário através do seu e-mail e senha
 	SELECT * FROM Usuario WHERE Email = 'Odirla@gmail.com' AND Senha = '65763';
 	GO
+

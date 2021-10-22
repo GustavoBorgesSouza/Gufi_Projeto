@@ -29,6 +29,20 @@ namespace senai_gufi_webAPI
                     options.SerializerSettings.NullValueHandling = NullValueHandling.Ignore;
                 });
 
+
+            services.addCors(options =>
+            {
+                options.AddPolicy{"CorsPolicy",
+                builder =>
+                {
+                    builder.WithOrigins("http://localhost:3000")
+                    .AllowAnyHeader()
+                    .AllowAnyMethod()
+                });
+            });
+                
+
+
             services.AddSwaggerGen( c => {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Gufi.webAPI", Version = "v1" });
 
@@ -76,6 +90,8 @@ namespace senai_gufi_webAPI
             });
 
             app.UseRouting();
+
+            app.UseCors("CorsPolicy");
 
             app.UseAuthentication();
 

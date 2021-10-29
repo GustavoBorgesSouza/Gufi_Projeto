@@ -135,6 +135,28 @@ export default class TiposEventos extends Component {
         });
     }
 
+    excluirTipoEvento = (tipoEvento) => {
+        console.log("O tipo de evento " + tipoEvento.IdTipoEvento + "foi selecionado");
+
+        //faz a chamada para a API usando fetcj e passando o ID do tipo de evento que será atualizado na URL da requisição
+        fetch('http://localhst:5000/api/tipoeventos/' + this.state.IdTipoEventoAlterado, {
+            //Define o método da requisição
+            method: 'DELETE'
+        }) 
+
+        .then(resposta => {
+            if(resposta.status === 204){
+                console.log("O tipo de evento " + tipoEvento.IdTipoEvento + "foi excluido");
+            }
+        })
+
+        .catch(erro => console.log(erro))
+
+        .then(this.buscarTipoEventoPorId);
+        
+
+    }
+
     render() {
         return (
             <div>
@@ -160,6 +182,8 @@ export default class TiposEventos extends Component {
                                                 <td>{tipoEvento.titulo}</td>
 
                                                 <td><button onClick={() => this.buscarTipoEventoPorId(tipoEvento)}>Editar</button></td>
+
+                                                <td><button onClick={() => this.excluirTipoEvento(tipoEvento)}>Excluir</button></td>
                                             </tr>
                                         )
                                     })

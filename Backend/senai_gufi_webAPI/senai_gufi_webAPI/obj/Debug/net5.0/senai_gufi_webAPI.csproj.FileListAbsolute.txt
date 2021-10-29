@@ -136,3 +136,14 @@ C:\Users\gusta\OneDrive\Área de Trabalho\Gufi_Projeto\Backend\senai_gufi_webAPI
 C:\Users\gusta\OneDrive\Área de Trabalho\Gufi_Projeto\Backend\senai_gufi_webAPI\senai_gufi_webAPI\obj\Debug\net5.0\senai_gufi_webAPI.pdb
 C:\Users\gusta\OneDrive\Área de Trabalho\Gufi_Projeto\Backend\senai_gufi_webAPI\senai_gufi_webAPI\obj\Debug\net5.0\senai_gufi_webAPI.genruntimeconfig.cache
 C:\Users\gusta\OneDrive\Área de Trabalho\Gufi_Projeto\Backend\senai_gufi_webAPI\senai_gufi_webAPI\obj\Debug\net5.0\senai_gufi_webAPI.csproj.AssemblyReference.cache
+C:\Users\44037739828\Desktop\Gufi_Projeto\Backend\senai_gufi_webAPI\senai_gufi_webAPI\obj\Debug\net5.0\senai_gufi_webAPI.csproj.AssemblyReference.cache
+C:\Users\44037739828\Desktop\Gufi_Projeto\Backend\senai_gufi_webAPI\senai_gufi_webAPI\obj\Debug\net5.0\senai_gufi_webAPI.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\44037739828\Desktop\Gufi_Projeto\Backend\senai_gufi_webAPI\senai_gufi_webAPI\obj\Debug\net5.0\senai_gufi_webAPI.AssemblyInfoInputs.cache
+C:\Users\44037739828\Desktop\Gufi_Projeto\Backend\senai_gufi_webAPI\senai_gufi_webAPI\obj\Debug\net5.0\senai_gufi_webAPI.AssemblyInfo.cs
+C:\Users\44037739828\Desktop\Gufi_Projeto\Backend\senai_gufi_webAPI\senai_gufi_webAPI\obj\Debug\net5.0\senai_gufi_webAPI.csproj.CoreCompileInputs.cache
+C:\Users\44037739828\Desktop\Gufi_Projeto\Backend\senai_gufi_webAPI\senai_gufi_webAPI\obj\Debug\net5.0\senai_gufi_webAPI.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\44037739828\Desktop\Gufi_Projeto\Backend\senai_gufi_webAPI\senai_gufi_webAPI\obj\Debug\net5.0\senai_gufi_webAPI.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\44037739828\Desktop\Gufi_Projeto\Backend\senai_gufi_webAPI\senai_gufi_webAPI\obj\Debug\net5.0\senai_gufi_webAPI.dll
+C:\Users\44037739828\Desktop\Gufi_Projeto\Backend\senai_gufi_webAPI\senai_gufi_webAPI\obj\Debug\net5.0\ref\senai_gufi_webAPI.dll
+C:\Users\44037739828\Desktop\Gufi_Projeto\Backend\senai_gufi_webAPI\senai_gufi_webAPI\obj\Debug\net5.0\senai_gufi_webAPI.xml
+C:\Users\44037739828\Desktop\Gufi_Projeto\Backend\senai_gufi_webAPI\senai_gufi_webAPI\obj\Debug\net5.0\senai_gufi_webAPI.pdb

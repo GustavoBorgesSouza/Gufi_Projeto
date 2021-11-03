@@ -1,5 +1,9 @@
 import {Component} from 'react'
 import axios from 'axios'
+import { parseJwt } from '../../services/auth';
+import { usuarioAutenticado } from '../../services/auth';
+
+// import 'css' 
 
 export default class Login extends Component{
     constructor(props){
@@ -28,10 +32,30 @@ export default class Login extends Component{
             if(resposta.status === 200){
                 //Deu certo, exibe o token no console e salva no localstorage
                 console.log("Meu token é" + resposta.data.token);
-                localStorage.setItem("usuario-login", resposta.data.token);
+                localStorage.setItem("usuario-login", resposta.data.token)
 
                 //define que a requicao terminou
                 this.setState({isLoading : false})
+
+                //Define a variavel base64 que vai receber o payload do token
+                //acessa o armazenamento local e através da chave "usuario login" pega o token
+                // let base64 = localStorage.getItem("usuario-login").split(".")[1];
+
+                // console.log(window.atob(base64));
+
+                // console.log(JSON.parse(window.atob(base64)));
+                //^ logica acima contida no parseJwt
+
+                console.log(parseJwt());
+
+                //exibe as propriedades da página
+                // console.log(this.props);
+
+                if (parseJwt().role === "1") {
+                    this.props.history.push("/tiposeventos");
+                } else{
+                    this.props.history.push("/");
+                }
             }
         })
 

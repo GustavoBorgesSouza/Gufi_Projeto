@@ -26,7 +26,11 @@ export default class TiposEventos extends Component {
         //funcao nativa JS, ele é uma API com métodos.
 
         //dentro dos parenteses vamos informar qual é o endpoint
-        fetch('http://localhst:5000/api/tipoeventos')
+        fetch('http://localhst:5000/api/tipoeventos',{
+            headers : {
+                'Authorization' : 'Bearer' + localStorage.getItem('usuario-login')
+            }
+        })
             //por parão ele sempre inicia como GET.
 
             //quando vvc tiver um retorno vai trazer a resposta em json
@@ -67,7 +71,8 @@ export default class TiposEventos extends Component {
                 body: JSON.stringify({ tituloTipoEvento: this.state.titulo }),
                 //Define o cabeçalho da requisição
                 headers: {
-                    "Content-Type": "application/json"
+                    "Content-Type": "application/json",
+                    'Authorization' : 'Bearer' + localStorage.getItem('usuario-login')
                 }
             })
 
@@ -101,7 +106,8 @@ export default class TiposEventos extends Component {
                     body: JSON.stringify({ tituloTipoEvento: this.state.titulo }),
 
                     headers: {
-                        "Content-Type": "application/json"
+                        "Content-Type": "application/json",
+                        'Authorization' : 'Bearer' + localStorage.getItem('usuario-login')
                     }
                 })
 
@@ -141,7 +147,10 @@ export default class TiposEventos extends Component {
         //faz a chamada para a API usando fetcj e passando o ID do tipo de evento que será atualizado na URL da requisição
         fetch('http://localhst:5000/api/tipoeventos/' + this.state.IdTipoEventoAlterado, {
             //Define o método da requisição
-            method: 'DELETE'
+            method: 'DELETE',
+            headers : {
+                'Authorization' : 'Bearer' + localStorage.getItem('usuario-login')
+            }
         }) 
 
         .then(resposta => {

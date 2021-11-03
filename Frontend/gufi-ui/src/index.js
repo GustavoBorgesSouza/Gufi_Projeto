@@ -11,13 +11,36 @@ import NotFound from './pages/notFound/notFound';
 import Login from './pages/login/login.jsx'
 
 import reportWebVitals from './reportWebVitals';
+import { parseJwt, usuarioAutenticado } from './services/auth';
+
+const PermissaoAdm = ({ component : Component}) => (
+  <Route
+    render = { props =>
+      usuarioAutenticado() && parseJwt().role === '1'?
+      //operador spread
+      <Component {...props} /> :
+      <Redirect to="/login" />
+    }
+  />
+)
+
+const PermissaoComum = ({ component : Component}) => (
+  <Route
+    render = { props =>
+      usuarioAutenticado() && parseJwt().role !== '1'?
+      //operador spread
+      <Component {...props} /> :
+      <Redirect to="/login" />
+    }
+  />
+)
 
 const routing = (
   <Router>
     <div>
       <Switch>
         <Route exact path="/" component={Home} /> {/* Home */}
-        <Route path="/tiposEventos" component={TiposEventos} /> {/* TiposEventos*/}
+        <PermissaoAdm path="/tiposEventos" component={TiposEventos} /> {/* TiposEventos*/}
         <Route path="/login" component={Login} />
         <Route path="/notFound" component={NotFound} /> {/* NotFound*/}
         <Redirect to="/notFound" /> {/* Redireciona para notfound caso não encontre nenhuma rota*/}

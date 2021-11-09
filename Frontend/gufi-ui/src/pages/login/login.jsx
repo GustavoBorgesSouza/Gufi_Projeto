@@ -54,7 +54,7 @@ export default class Login extends Component{
                 if (parseJwt().role === "1") {
                     this.props.history.push("/tiposeventos");
                 } else{
-                    this.props.history.push("/");
+                    this.props.history.push("/meusEventos");
                 }
             }
         })
